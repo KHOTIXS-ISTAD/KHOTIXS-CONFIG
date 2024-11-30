@@ -1,0 +1,8 @@
+
+
+DB_USERNAME: khotixs
+DB_PASSWORD: khotixs123
+DB_HOST: 143.198.83.9
+DB_PORT: 27017
+DB_NAME: communication
+AUTHENTICATION-DATABASE: admin

@@ -1,0 +1,43 @@
+server:
+  port: 8080
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 500MB
+  datasource:
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${db-host}:${db-port}/${db-name}
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+minio:
+  url: ${minio-url}
+  secret-key: ${MINIO_SECRETE_KEY}
+  bucket-name: ${minio-bucket}
+  access-key: ${MINIO_ACCESS_KEY}
+
+media:
+  #media endpoint
+  image-end-point: ${image-endpoint}
+  video-end-point: ${video-endpoint}
+
+  #the host that handle show image
+  base-uri: ${base-uri}
+
+
+springdoc:
+  swagger-ui:
+    path: /
+  api-docs:
+    path: /v3/api-docs
