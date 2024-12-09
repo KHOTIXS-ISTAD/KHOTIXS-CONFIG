@@ -9,9 +9,9 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    url: jdbc:postgresql://143.198.83.9:5430/oauth2
-    username: soknem
-    password: 123
+    url: jdbc:postgresql://143.198.83.9:5432/oauth2_db
+    username: oauth2
+    password: oauth2
     driver-class-name: org.postgresql.Driver
   servlet:
     multipart:
