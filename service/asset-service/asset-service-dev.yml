@@ -1,3 +1,5 @@
+#port for the service
+PORT: 8889
 
 #database
 DB_USERNAME: services
