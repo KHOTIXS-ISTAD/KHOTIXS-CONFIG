@@ -1,6 +1,9 @@
 #port for the service
 PORT: 8889
 
+#eureka server
+EUREKA-SERVER: eureka-service
+
 #database
 DB_USERNAME: services
 DB_PASSWORD: services

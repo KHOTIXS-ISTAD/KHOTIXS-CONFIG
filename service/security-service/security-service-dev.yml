@@ -43,13 +43,13 @@ management:
   endpoint:
     health:
       show-details: always
+
 logging:
   level:
     org:
       springframework:
         security: DEBUG
     org.springframework.mail: DEBUG
-
 
 twilio:
   account:
@@ -58,3 +58,10 @@ twilio:
     token: edb68bf7b8f5bd389f19f56e974c8bc5
   phone:
     number: +16812339585
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+    healthcheck:
+      enabled: true 
