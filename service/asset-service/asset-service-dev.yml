@@ -2,7 +2,7 @@
 PORT: 8889
 
 #eureka server
-EUREKA-SERVER: eureka-service
+EUREKA-SERVER: eureka-server
 
 #database
 DB_USERNAME: services
