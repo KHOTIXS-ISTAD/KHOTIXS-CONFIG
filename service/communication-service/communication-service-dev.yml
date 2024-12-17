@@ -1,8 +1,0 @@
-
-
-DB_USERNAME: services
-DB_PASSWORD: services
-DB_HOST: 35.193.215.248
-DB_PORT: 27017
-DB_NAME: communication
-AUTHENTICATION-DATABASE: admin
