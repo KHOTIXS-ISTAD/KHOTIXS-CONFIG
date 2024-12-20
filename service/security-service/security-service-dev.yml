@@ -62,6 +62,6 @@ twilio:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://34.67.154.112:8761/eureka/
     healthcheck:
       enabled: true 
