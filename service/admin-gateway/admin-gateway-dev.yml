@@ -7,9 +7,9 @@ spring:
       client:
         provider:
           nextjs:
-            issuer-uri: http://35.193.215.248:9090
-            authorization-uri: http://35.193.215.248:9090/oauth2/authorize
-            token-uri: http://35.193.215.248:9090/oauth2/token
+            issuer-uri: http://34.67.154.112:9090
+            authorization-uri: http://34.67.154.112:9090/oauth2/authorize
+            token-uri: http://34.67.154.112:9090/oauth2/token
         #            user-info-uri: http://localhost:9090/oauth2/userinfo
 
         registration:
