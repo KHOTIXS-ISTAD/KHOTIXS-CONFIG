@@ -9,3 +9,4 @@ spring:
       username: ${DB_USERNAME}
       password: ${DB_PASSWORD}
       authentication-database: ${AUTHENTICATION-DATABASE}
+      auto-index-creation: true
