@@ -1,0 +1,55 @@
+server:
+  port: 9090
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://localhost/oauth2_db
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sokname56@gmail.com
+    password: ehis ldbm otct hykc
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+    org.springframework.mail: DEBUG
+
+
+twilio:
+  account:
+    sid: ACedbf8a9b306d6e5809eb35f2aea9c97a
+  auth:
+    token: edb68bf7b8f5bd389f19f56e974c8bc5
+  phone:
+    number: +16812339585
