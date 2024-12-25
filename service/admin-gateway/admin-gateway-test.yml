@@ -39,7 +39,7 @@ spring:
       routes:
         - id: security-route
 #          uri: http://35.193.215.248:9090
-          uri: http://localhost:9090
+          uri: lb://security-service
           predicates:
             - Path=/identity/**
           filters:
