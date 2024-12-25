@@ -120,7 +120,8 @@ client-security-matchers: >
   /event-ticket/**,
   /payment/**,
   /user-profile/**,
-  /content/**
+  /content/**,
+  /identity/**
 
 client-permit-matchers: >
   /login/**,
