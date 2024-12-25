@@ -140,4 +140,5 @@ client-permit-matchers: >
   /event-ticket/**,
   /payment/**,
   /user-profile/**,
-  /content/**
+  /content/**,
+  /identity/**

@@ -119,8 +119,7 @@ client-security-matchers: >
   /event-ticket/**,
   /payment/**,
   /user-profile/**,
-  /content/**,
-  /identity/api/v1/auths/**
+  /content/**
 
 client-permit-matchers: >
   /login/**,
@@ -141,5 +140,4 @@ client-permit-matchers: >
   /event-ticket/**,
   /payment/**,
   /user-profile/**,
-  /content/**,
-  /identity/api/v1/auths/**
+  /content/**
