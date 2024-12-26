@@ -94,7 +94,7 @@ spring:
             - RewritePath=/payment/(?<segment>.*),/$\{segment}
 
         - id: user-profile-route
-          uri: lb://user-profile-service
+          uri: http://34.121.176.49:8086
           predicates:
             - Path=/user-profile/**
           filters:
