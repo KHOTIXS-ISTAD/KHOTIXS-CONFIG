@@ -3,6 +3,7 @@ PORT: 8889
 #eureka server
 EUREKA-SERVER: localhost
 
+
 #database
 DB_USERNAME: services
 DB_PASSWORD: services
