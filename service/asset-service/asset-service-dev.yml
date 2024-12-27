@@ -18,6 +18,6 @@ MINIO_SECRETE_KEY: NINu4iEk7TTvlWS02wf2m54LDIriTbExomwpuHe6
 MINIO_ACCESS_KEY: Of88NeYo8e4W1R92lYFl
 
 #media
-base-uri: http://334.69.50.191:8889
+base-uri: http://34.69.50.191:8889
 image-endpoint: /api/v1/files
 video-endpoint: /api/v1/files
