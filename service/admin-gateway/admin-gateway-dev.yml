@@ -38,7 +38,7 @@ spring:
         - SaveSession
       routes:
         - id: security-route
-          uri: http://34.121.176.49:9090
+          uri: http://34.69.50.191:9090
           predicates:
             - Path=/identity/**
           filters:
