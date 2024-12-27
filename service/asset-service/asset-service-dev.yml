@@ -12,7 +12,7 @@ db-port: 5433
 db-name: services_db
 
 #minio
-minio-url: http://334.69.50.191:9000
+minio-url: http://34.69.50.191:9000
 minio-bucket: media
 MINIO_SECRETE_KEY: NINu4iEk7TTvlWS02wf2m54LDIriTbExomwpuHe6
 MINIO_ACCESS_KEY: Of88NeYo8e4W1R92lYFl
