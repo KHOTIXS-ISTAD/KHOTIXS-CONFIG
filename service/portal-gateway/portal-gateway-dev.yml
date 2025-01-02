@@ -23,7 +23,7 @@ spring:
               - openid
               - profile
               - email
-            redirect-uri: http://khotixs-webplatform-ui:8890/login/oauth2/code/nextjs
+            redirect-uri: http://portal-gateway:8890/login/oauth2/code/nextjs
             client-authentication-method:
               - client_secret_post
               - client_secret_basic
