@@ -7,9 +7,9 @@ spring:
       client:
         provider:
           nextjs:
-            issuer-uri: http://khotixs-auth.devkh.asia
-            authorization-uri: http://khotixs-auth.devkh.asia/oauth2/authorize
-            token-uri: http://khotixs-auth.devkh.asia/oauth2/token
+            issuer-uri: https://khotixs-auth.devkh.asia
+            authorization-uri: https://khotixs-auth.devkh.asia/oauth2/authorize
+            token-uri: https://khotixs-auth.devkh.asia/oauth2/token
         #            user-info-uri: http://localhost:9090/oauth2/userinfo
 
         registration:
@@ -23,7 +23,7 @@ spring:
               - openid
               - profile
               - email
-            redirect-uri: http://khotixs.devkh.asia/login/oauth2/code/nextjs
+            redirect-uri: https://khotixs.devkh.asia/login/oauth2/code/nextjs
             client-authentication-method:
               - client_secret_post
               - client_secret_basic
@@ -104,7 +104,7 @@ spring:
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
 
         - id: nextjs
-          uri: http://khotixs-webplatform-ui:3001
+          uri: https://khotixs-webplatform-ui:3001
 #          uri: http://172.23.0.10:3001
 
           predicates:
