@@ -46,6 +46,5 @@ eureka:
 springdoc:
   swagger-ui:
     path: /
-    disable-swagger-default-url: true
   api-docs:
     path: /v3/api-docs
