@@ -104,7 +104,7 @@ spring:
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
 
         - id: nextjs
-          uri: http://localhost:3001
+          uri: http://khotixs_webplatform_ui:30001
           predicates:
             - Path=/**
 
