@@ -105,7 +105,7 @@ spring:
 
         - id: nextjs
 #          uri: http://khotixs_webplatform_ui:3001
-          uri: http://config-server:8888
+          uri: http://khotixs_webplatform_ui:3001
           predicates:
             - Path=/**
 
