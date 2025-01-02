@@ -8,7 +8,7 @@ spring:
         provider:
           nextjs:
             issuer-uri: http://khotixs-auth.devkh.asia
-            authorization-uri: http://khotixs-auth.devkh.asia:9090/oauth2/authorize
+            authorization-uri: http://khotixs-auth.devkh.asia/oauth2/authorize
             token-uri: http://khotixs-auth.devkh.asia/oauth2/token
         #            user-info-uri: http://localhost:9090/oauth2/userinfo
 
