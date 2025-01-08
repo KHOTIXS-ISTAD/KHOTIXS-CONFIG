@@ -38,8 +38,8 @@ spring:
         - SaveSession
       routes:
         - id: security-route
-#          uri: https://khotixs-auth.devkh.asia
-          uri: lb://security-service
+          uri: https://khotixs-auth.devkh.asia
+          #          uri: lb://security-service
           predicates:
             - Path=/identity/**
           filters:
@@ -95,7 +95,7 @@ spring:
             - RewritePath=/payment/(?<segment>.*),/$\{segment}
 
         - id: user-profile-route
-          uri: lb://user-profile-service
+          uri: http://34.69.50.191:8086
           predicates:
             - Path=/user-profile/**
           filters:
