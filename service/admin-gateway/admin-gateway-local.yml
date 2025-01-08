@@ -7,9 +7,9 @@ spring:
       client:
         provider:
           nextjs:
-            issuer-uri: https://khotixs-auth.devkh.asia
-            authorization-uri: https://khotixs-auth.devkh.asia/oauth2/authorize
-            token-uri: https://khotixs-auth.devkh.asia/oauth2/token
+            issuer-uri: http://localhost:9090
+            authorization-uri: http://localhost:9090/oauth2/authorize
+            token-uri: http://localhost:9090/oauth2/token
         #            user-info-uri: http://localhost:9090/oauth2/userinfo
 
         registration:
@@ -38,8 +38,8 @@ spring:
         - SaveSession
       routes:
         - id: security-route
-          uri: https://khotixs-auth.devkh.asia
-          #          uri: lb://security-service
+#          uri: https://khotixs-auth.devkh.asia
+          uri: lb://security-service
           predicates:
             - Path=/identity/**
           filters:
@@ -95,7 +95,7 @@ spring:
             - RewritePath=/payment/(?<segment>.*),/$\{segment}
 
         - id: user-profile-route
-          uri: http://34.69.50.191:8086
+          uri: lb://user-profile-service
           predicates:
             - Path=/user-profile/**
           filters:
