@@ -1,6 +1,6 @@
-# server port is set to 8083
+# server port is set to 8892
 server:
-  port: 8083
+  port: 8892
 
 # The database connection properties are set to the environment variables.
 spring:
