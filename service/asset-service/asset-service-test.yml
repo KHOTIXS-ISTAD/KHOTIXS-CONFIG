@@ -1,6 +1,5 @@
 #port for the service
 PORT: 8889
-
 #eureka server
 EUREKA-SERVER: localhost
 

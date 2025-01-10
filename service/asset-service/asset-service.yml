@@ -35,6 +35,7 @@ media:
   #the host that handle show image
   base-uri: ${base-uri}
 
+
 eureka:
   client:
     serviceUrl:

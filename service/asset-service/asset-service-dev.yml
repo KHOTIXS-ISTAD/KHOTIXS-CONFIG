@@ -7,17 +7,17 @@ EUREKA-SERVER: eureka-server
 #database
 DB_USERNAME: services
 DB_PASSWORD: services
-db-host: 34.121.176.49
+db-host: 34.69.50.191
 db-port: 5433
 db-name: services_db
 
 #minio
-minio-url: http://34.121.176.49:9000
+minio-url: http://34.69.50.191:9000
 minio-bucket: media
-MINIO_SECRETE_KEY: NINu4iEk7TTvlWS02wf2m54LDIriTbExomwpuHe6
-MINIO_ACCESS_KEY: Of88NeYo8e4W1R92lYFl
+MINIO_SECRETE_KEY: q4JZ3VXI8BBBhIUeaBkmWBzHZ0uxxD3Wm4XHakBb
+MINIO_ACCESS_KEY: a3HN6WYKOnGsVtWouQaw
 
 #media
-base-uri: http://34.121.176.49:8889
+base-uri: http://khotixs.devkh.asia/asset
 image-endpoint: /api/v1/files
 video-endpoint: /api/v1/files

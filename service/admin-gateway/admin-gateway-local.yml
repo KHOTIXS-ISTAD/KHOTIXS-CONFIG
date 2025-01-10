@@ -7,9 +7,12 @@ spring:
       client:
         provider:
           nextjs:
-            issuer-uri: http://34.69.50.191:9090
-            authorization-uri: http://34.69.50.191:9090/oauth2/authorize
-            token-uri: http://34.69.50.191:9090/oauth2/token
+#            issuer-uri: https://khotixs-auth.devkh.asia
+#            authorization-uri: https://khotixs-auth.devkh.asia/oauth2/authorize
+#            token-uri: https://khotixs-auth.devkh.asia/oauth2/token
+            issuer-uri: http://localhost:9090
+            authorization-uri: http://localhost:9090/oauth2/authorize
+            token-uri: http://localhost:9090/oauth2/token
         #            user-info-uri: http://localhost:9090/oauth2/userinfo
 
         registration:
@@ -38,7 +41,8 @@ spring:
         - SaveSession
       routes:
         - id: security-route
-          uri: http://34.69.50.191:9090
+          uri: https://khotixs-auth.devkh.asia
+          #          uri: lb://security-service
           predicates:
             - Path=/identity/**
           filters:
@@ -109,7 +113,6 @@ spring:
 
 client-security-matchers: >
   /login/**,
-  /logout/**,
   /oauth2/**,
   /en/**,
   /auth/**,
@@ -120,7 +123,8 @@ client-security-matchers: >
   /event-ticket/**,
   /payment/**,
   /user-profile/**,
-  /content/**
+  /content/**,
+  /identity/**
 
 client-permit-matchers: >
   /login/**,
