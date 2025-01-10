@@ -79,7 +79,7 @@ spring:
             - RewritePath=/order/(?<segment>.*),/$\{segment}
 
         - id: event-ticket-route
-          uri: lb://event-and-ticket-booking-service
+          uri: http://34.69.50.191:8892
           predicates:
             - Path=/event-ticket/**
           filters:
