@@ -38,7 +38,7 @@ spring:
         - SaveSession
       routes:
         - id: security-route
-          uri: http://34.69.50.191:9090
+          uri: http://35.225.212.218:9090
 #          uri: lb://security-service
           predicates:
             - Path=/identity/**
@@ -79,7 +79,7 @@ spring:
             - RewritePath=/order/(?<segment>.*),/$\{segment}
 
         - id: event-ticket-route
-          uri: http://34.69.50.191:8892
+          uri: http://35.225.212.218:8892
           predicates:
             - Path=/event-ticket/**
           filters:
@@ -95,7 +95,7 @@ spring:
             - RewritePath=/payment/(?<segment>.*),/$\{segment}
 
         - id: user-profile-route
-          uri: http://34.69.50.191:8086
+          uri: http://35.225.212.218:8086
           predicates:
             - Path=/user-profile/**
           filters:
