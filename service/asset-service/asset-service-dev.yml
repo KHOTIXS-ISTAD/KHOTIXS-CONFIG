@@ -9,7 +9,7 @@ DB_USERNAME: services
 DB_PASSWORD: services
 db-host: 35.225.212.218
 db-port: 5433
-db-name: services_db
+db-name: asset_db
 
 #minio
 minio-url: http://35.225.212.218:9000
