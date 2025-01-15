@@ -1,6 +1,8 @@
 server:
   port: 9090
+
 spring:
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -8,15 +10,18 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
   datasource:
-    url: jdbc:postgresql://localhost/oauth2_db
+    url: jdbc:postgresql://${HOST}:${PORT}/${DB}
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
+
   servlet:
     multipart:
       max-request-size: 10MB
       max-file-size: 10MB
+
   mail:
     host: smtp.gmail.com
     port: 587
@@ -38,13 +43,13 @@ management:
   endpoint:
     health:
       show-details: always
+
 logging:
   level:
     org:
       springframework:
         security: DEBUG
     org.springframework.mail: DEBUG
-
 
 twilio:
   account:
