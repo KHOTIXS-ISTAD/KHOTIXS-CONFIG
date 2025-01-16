@@ -63,7 +63,7 @@ spring:
             - RewritePath=/asset/(?<segment>.*),/$\{segment}
 
         - id: communication-route
-          uri: lb://communication-service
+          uri: http://35.225.212.218:8891
           predicates:
             - Path=/communication/**
           filters:
