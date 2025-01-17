@@ -42,8 +42,8 @@ spring:
         - SaveSession
       routes:
         - id: security-route
-          uri: https://khotixs-auth.devkh.asia
-          #          uri: lb://security-service
+#          uri: https://khotixs-auth.devkh.asia
+          uri: lb://security-service
           predicates:
             - Path=/identity/**
           filters:
