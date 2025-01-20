@@ -45,10 +45,10 @@ spring:
 #          uri: https://khotixs-auth.devkh.asia
           uri: lb://security-service
           predicates:
-            - Path=/**
+            - Path=/identity/**
           filters:
             - TokenRelay=
-#            - RewritePath=/identity/(?<segment>.*),/$\{segment}
+            - RewritePath=/identity/(?<segment>.*),/$\{segment}
 
         - id: content-discovery-route
           uri: lb://content-discovery-service
@@ -114,7 +114,6 @@ spring:
 
 client-security-matchers: >
   /login/**,
-  /register-user,
   /logout/**,
   /oauth2/**,
   /en/**,
@@ -131,7 +130,6 @@ client-security-matchers: >
 
 client-permit-matchers: >
   /login/**,
-  /register-user,
   /oauth2/**,
   /logout/**,
   /en/**,
