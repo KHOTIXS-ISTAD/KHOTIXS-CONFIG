@@ -101,16 +101,16 @@ spring:
           filters:
             - TokenRelay=
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
-
-        - id: nextjs-organizer
-          uri: http://localhost:3000
-          predicates:
-            - Path=/organizer/**
-
-#        - id: nextjs
+#
+#        - id: nextjs-organizer
 #          uri: http://localhost:3000
 #          predicates:
-#            - Path=/**
+#            - Path=/organizer/**
+
+        - id: nextjs
+          uri: http://localhost:3000
+          predicates:
+            - Path=/**
 
 
 client-security-matchers: >
