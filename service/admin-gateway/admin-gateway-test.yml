@@ -103,7 +103,7 @@ spring:
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
 
         - id: nextjs-organizer
-          uri: http://khotixs-webplatform:3000
+          uri: http://localhost:3000
           predicates:
             - Path=/organizer/**
 
