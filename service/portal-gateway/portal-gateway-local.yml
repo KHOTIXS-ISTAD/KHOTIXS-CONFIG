@@ -1,5 +1,5 @@
 server:
-  port: 8887
+  port: 8000
 
 spring:
   security:
@@ -7,9 +7,12 @@ spring:
       client:
         provider:
           nextjs:
-            issuer-uri: https://khotixs-auth.devkh.asia
-            authorization-uri: https://khotixs-auth.devkh.asia/oauth2/authorize
-            token-uri: https://khotixs-auth.devkh.asia/oauth2/token
+#            issuer-uri: https://khotixs-auth.devkh.asia
+#            authorization-uri: https://khotixs-auth.devkh.asia/oauth2/authorize
+#            token-uri: https://khotixs-auth.devkh.asia/oauth2/token
+            issuer-uri: http://localhost:9090
+            authorization-uri: http://localhost:9090/oauth2/authorize
+            token-uri: http://localhost:9090/oauth2/token
         #            user-info-uri: http://localhost:9090/oauth2/userinfo
 
         registration:
@@ -23,10 +26,11 @@ spring:
               - openid
               - profile
               - email
-            redirect-uri: https://khotixs-admin.devkh.asia/login/oauth2/code/nextjs
+            redirect-uri: http://localhost:8001/login/oauth2/code/nextjs
             client-authentication-method:
               - client_secret_post
               - client_secret_basic
+            post-logout-redirect-uri: http://localhost:8001
   cloud:
     gateway:
       discovery:
@@ -38,7 +42,7 @@ spring:
         - SaveSession
       routes:
         - id: security-route
-#          uri: http://khotixs-auth.devkh.asia
+#          uri: https://khotixs-auth.devkh.asia
           uri: lb://security-service
           predicates:
             - Path=/identity/**
@@ -86,7 +90,7 @@ spring:
             - RewritePath=/order/(?<segment>.*),/$\{segment}
 
         - id: event-ticket-route
-          uri: lb://event-and-ticket-service
+          uri: lb://event-and-ticket-booking-service
           predicates:
             - Path=/event-ticket/**
           filters:
@@ -102,21 +106,15 @@ spring:
             - RewritePath=/payment/(?<segment>.*),/$\{segment}
 
         - id: user-profile-route
-#          uri: http://34.69.50.191:8086
           uri: lb://user-profile-service
           predicates:
             - Path=/user-profile/**
           filters:
             - TokenRelay=
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
-            -
-        - id: nextjs-organizer
-          uri: http://khotixs-webplatform:3000
-          predicates:
-            - Path=/organizer/**
 
         - id: nextjs
-          uri: http://khotixs-webplatform:3000
+          uri: http://localhost:3000
           predicates:
             - Path=/**
 
@@ -126,7 +124,7 @@ client-security-matchers: >
   /logout/**,
   /oauth2/**,
   /en/**,
-  /auth/**,
+  /auths/**,
   /profile/**,
   /asset/**,
   /communication/**,
@@ -134,14 +132,15 @@ client-security-matchers: >
   /event-ticket/**,
   /payment/**,
   /user-profile/**,
-  /content/**
+  /content/**,
+  /identity/**
 
 client-permit-matchers: >
   /login/**,
   /oauth2/**,
   /logout/**,
   /en/**,
-  /auth/**,
+  /auths/**,
   /contactSupport/**,
   /error/**,
   /actuator/**,

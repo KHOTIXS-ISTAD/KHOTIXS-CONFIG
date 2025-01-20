@@ -51,13 +51,11 @@ spring:
             - RewritePath=/identity/(?<segment>.*),/$\{segment}
 
         - id: security-route-auth
-          #          uri: https://khotixs-auth.devkh.asia
           uri: lb://security-service
           predicates:
-            - Path=/auths/**,/css/**,/images/**,/js/**,/api/v1/users/**,/login
+            - Path=/auths/**,/css/**,/images/**,/js/**,/api/v1/users/**,/login,/api/v1/auths/**
           filters:
             - TokenRelay=
-#            - RewritePath=/identity/(?<segment>.*),/$\{segment}
 
         - id: content-discovery-route
           uri: lb://content-discovery-service

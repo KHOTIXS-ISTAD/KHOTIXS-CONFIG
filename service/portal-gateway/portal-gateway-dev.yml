@@ -46,6 +46,13 @@ spring:
             - TokenRelay=
             - RewritePath=/identity/(?<segment>.*),/$\{segment}
 
+        - id: security-route-auth
+          uri: lb://security-service
+          predicates:
+            - Path=/auths/**,/css/**,/images/**,/js/**,/api/v1/users/**,/login,/api/v1/auths/**
+          filters:
+            - TokenRelay=
+
         - id: content-discovery-route
           uri: lb://content-discovery-service
           predicates:
@@ -103,10 +110,13 @@ spring:
             - TokenRelay=
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
 
+        - id: nextjs-organizer
+          uri: http://khotixs-webplatform-ui:3001
+          predicates:
+            - Path=/organizer/**
+
         - id: nextjs
           uri: http://khotixs-webplatform-ui:3001
-#          uri: http://172.23.0.10:3001
-
           predicates:
             - Path=/**
 
@@ -116,7 +126,7 @@ client-security-matchers: >
   /logout/**,
   /oauth2/**,
   /en/**,
-  /auth/**,
+  /auths/**,
   /profile/**,
   /asset/**,
   /communication/**,
@@ -131,7 +141,7 @@ client-permit-matchers: >
   /oauth2/**,
   /logout/**,
   /en/**,
-  /auth/**,
+  /auths/**,
   /contactSupport/**,
   /error/**,
   /actuator/**,
