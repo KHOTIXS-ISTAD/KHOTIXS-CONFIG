@@ -110,15 +110,10 @@ spring:
             - TokenRelay=
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
 
-        - id: nextjs-organizer
+        - id: nextjs
           uri: http://khotixs-webplatform:3000
           predicates:
-            - Path=/organizer/**
-#
-#        - id: nextjs
-#          uri: http://khotixs-webplatform:3000
-#          predicates:
-#            - Path=/**
+            - Path=/**
 
 
 client-security-matchers: >
