@@ -54,7 +54,7 @@ spring:
           #          uri: https://khotixs-auth.devkh.asia
           uri: lb://security-service
           predicates:
-            - Path=/auths/**
+            - Path=/auths/**,/css/**
           filters:
             - TokenRelay=
 #            - RewritePath=/identity/(?<segment>.*),/$\{segment}
