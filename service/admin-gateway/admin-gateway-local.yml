@@ -52,9 +52,9 @@ spring:
 
         - id: security-route-auth
           #          uri: https://khotixs-auth.devkh.asia
-          uri: lb://security-service-auths
+          uri: lb://security-service
           predicates:
-            - Path=/css/**
+            - Path=/auths/**
           filters:
             - TokenRelay=
 #            - RewritePath=/identity/(?<segment>.*),/$\{segment}
