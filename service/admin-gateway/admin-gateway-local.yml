@@ -48,7 +48,7 @@ spring:
             - Path=/**
           filters:
             - TokenRelay=
-            - RewritePath=/identity/(?<segment>.*),/$\{segment}
+#            - RewritePath=/identity/(?<segment>.*),/$\{segment}
 
         - id: content-discovery-route
           uri: lb://content-discovery-service
