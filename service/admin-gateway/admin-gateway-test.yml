@@ -107,10 +107,10 @@ spring:
           predicates:
             - Path=/organizer/**
 
-        - id: nextjs
-          uri: http://localhost:3000
-          predicates:
-            - Path=/**
+#        - id: nextjs
+#          uri: http://localhost:3000
+#          predicates:
+#            - Path=/**
 
 
 client-security-matchers: >
