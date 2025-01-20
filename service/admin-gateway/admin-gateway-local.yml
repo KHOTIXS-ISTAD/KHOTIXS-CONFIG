@@ -50,7 +50,7 @@ spring:
             - TokenRelay=
             - RewritePath=/identity/(?<segment>.*),/$\{segment}
             -
-        - id: security-route
+        - id: security-route-auth
           #          uri: https://khotixs-auth.devkh.asia
           uri: lb://security-service
           predicates:
