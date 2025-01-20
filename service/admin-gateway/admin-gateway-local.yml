@@ -49,6 +49,15 @@ spring:
           filters:
             - TokenRelay=
             - RewritePath=/identity/(?<segment>.*),/$\{segment}
+            -
+        - id: security-route
+          #          uri: https://khotixs-auth.devkh.asia
+          uri: lb://security-service
+          predicates:
+            - Path=/auths/**
+          filters:
+            - TokenRelay=
+#            - RewritePath=/identity/(?<segment>.*),/$\{segment}
 
         - id: content-discovery-route
           uri: lb://content-discovery-service
