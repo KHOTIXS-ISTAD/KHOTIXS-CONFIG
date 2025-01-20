@@ -1,0 +1,23 @@
+#port for the service
+PORT: 8889
+
+#eureka server
+EUREKA-SERVER: eureka-server
+
+#database
+DB_USERNAME: services
+DB_PASSWORD: services
+db-host: 35.225.212.218
+db-port: 5433
+db-name: asset_db
+
+#minio
+minio-url: http://35.225.212.218:9000
+minio-bucket: media
+MINIO_SECRETE_KEY: q4JZ3VXI8BBBhIUeaBkmWBzHZ0uxxD3Wm4XHakBb
+MINIO_ACCESS_KEY: a3HN6WYKOnGsVtWouQaw
+
+#media
+base-uri: http://khotixs.devkh.asia/asset
+image-endpoint: /api/v1/files
+video-endpoint: /api/v1/files

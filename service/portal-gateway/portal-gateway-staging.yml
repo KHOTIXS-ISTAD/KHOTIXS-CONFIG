@@ -1,0 +1,159 @@
+server:
+  port: 8890
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          nextjs:
+            issuer-uri: https://khotixs-auth.devkh.asia
+            authorization-uri: https://khotixs-auth.devkh.asia/oauth2/authorize
+            token-uri: https://khotixs-auth.devkh.asia/oauth2/token
+        #            user-info-uri: http://localhost:9090/oauth2/userinfo
+
+        registration:
+          nextjs:
+            provider: nextjs
+            client-id: nextjs
+            client-secret: nextjs123
+            authorization-grant-type:
+              - authorization_code
+            scope:
+              - openid
+              - profile
+              - email
+            redirect-uri: https://khotixs.devkh.asia/login/oauth2/code/nextjs
+            client-authentication-method:
+              - client_secret_post
+              - client_secret_basic
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin Access-Control-Request-Headers
+        - SaveSession
+      routes:
+        - id: security-route
+          #          uri: http://khotixs-auth.devkh.asia
+          uri: lb://security-service
+          predicates:
+            - Path=/identity/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/identity/(?<segment>.*),/$\{segment}
+
+        - id: security-route-auth
+          uri: lb://security-service
+          predicates:
+            - Path=/auths/**,/css/**,/images/**,/js/**,/api/v1/users/**,/login,/api/v1/auths/**
+          filters:
+            - TokenRelay=
+
+        - id: content-discovery-route
+          uri: lb://content-discovery-service
+          predicates:
+            - Path=/content/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/content/(?<segment>.*),/$\{segment}
+
+        - id: asset-route
+          uri: lb://asset-service
+          predicates:
+            - Path=/asset/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/asset/(?<segment>.*),/$\{segment}
+
+        - id: communication-route
+          uri: lb://communication-service
+          predicates:
+            - Path=/communication/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/communication/(?<segment>.*),/$\{segment}
+
+        - id: order-route
+          uri: lb://order-management-service
+          predicates:
+            - Path=/order/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/order/(?<segment>.*),/$\{segment}
+
+        - id: event-ticket-route
+          uri: lb://event-and-ticket-service
+          predicates:
+            - Path=/event-ticket/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/event-ticket/(?<segment>.*),/$\{segment}
+
+        - id: payment-route
+          uri: lb://payment-service
+          predicates:
+            - Path=/payment/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/payment/(?<segment>.*),/$\{segment}
+
+        - id: user-profile-route
+          #          uri: http://34.69.50.191:8086
+          uri: lb://user-profile-service
+          predicates:
+            - Path=/user-profile/**
+          filters:
+            - TokenRelay=
+            - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
+
+        - id: nextjs-organizer
+          uri: http://khotixs-webplatform-ui:3001
+          predicates:
+            - Path=/organizer/**
+
+        - id: nextjs
+          uri: http://khotixs-webplatform-ui:3001
+          predicates:
+            - Path=/**
+
+
+client-security-matchers: >
+  /login/**,
+  /logout/**,
+  /oauth2/**,
+  /en/**,
+  /auths/**,
+  /profile/**,
+  /asset/**,
+  /communication/**,
+  /order/**,
+  /event-ticket/**,
+  /payment/**,
+  /user-profile/**,
+  /content/**
+
+client-permit-matchers: >
+  /login/**,
+  /oauth2/**,
+  /logout/**,
+  /en/**,
+  /auths/**,
+  /contactSupport/**,
+  /error/**,
+  /actuator/**,
+  /info/**,
+  /health/**,
+  /prometheus/**,
+  /profile/**,
+  /asset/**,
+  /communication/**,
+  /order/**,
+  /event-ticket/**,
+  /payment/**,
+  /user-profile/**,
+  /content/**,
+  /identity/**
