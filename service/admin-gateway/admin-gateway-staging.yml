@@ -6,17 +6,17 @@ spring:
     oauth2:
       client:
         provider:
-          nextjs:
+          admin:
             issuer-uri: https://oauth.khotixs.istad.co
             authorization-uri: https://oauth.khotixs.istad.co/oauth2/authorize
             token-uri: https://oauth.khotixs.istad.co/oauth2/token
         #            user-info-uri: http://localhost:9090/oauth2/userinfo
 
         registration:
-          nextjs:
-            provider: nextjs
-            client-id: nextjs
-            client-secret: nextjs123
+          admin:
+            provider: admin
+            client-id: admin
+            client-secret: admin123
             authorization-grant-type:
               - authorization_code
             scope:
