@@ -6,24 +6,24 @@ spring:
     oauth2:
       client:
         provider:
-          nextjs:
-            issuer-uri: http://34.67.154.112:9090
-            authorization-uri: http://34.67.154.112:9090/oauth2/authorize
-            token-uri: http://34.67.154.112:9090/oauth2/token
-#            user-info-uri: http://localhost:9090/oauth2/userinfo
+          admin:
+            issuer-uri: https://oauth.khotixs.istad.co
+            authorization-uri: https://oauth.khotixs.istad.co/oauth2/authorize
+            token-uri: https://oauth.khotixs.istad.co/oauth2/token
+        #            user-info-uri: http://localhost:9090/oauth2/userinfo
 
         registration:
-          nextjs:
-            provider: nextjs
-            client-id: nextjs
-            client-secret: nextjs123
+          admin:
+            provider: admin
+            client-id: admin
+            client-secret: admin123
             authorization-grant-type:
               - authorization_code
             scope:
               - openid
               - profile
               - email
-            redirect-uri: http://localhost:8000/login/oauth2/code/nextjs
+            redirect-uri: https://admin.khotixs.istad.co/login/oauth2/code/admin
             client-authentication-method:
               - client_secret_post
               - client_secret_basic
