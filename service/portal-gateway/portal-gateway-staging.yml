@@ -111,12 +111,12 @@ spring:
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
 
         - id: nextjs-organizer
-          uri: http://khotixs-webplatform:7401
+          uri: http://khotixs-webplatform-ui:7401
           predicates:
             - Path=/organizer/**
 
         - id: nextjs
-          uri: http://khotixs-webplatform:7401
+          uri: http://khotixs-webplatform-ui:7401
           predicates:
             - Path=/**
 
