@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 8887
 
 spring:
   security:
@@ -38,12 +38,20 @@ spring:
         - SaveSession
       routes:
         - id: security-route
+          #          uri: http://khotixs-auth.devkh.asia
           uri: lb://security-service
           predicates:
             - Path=/identity/**
           filters:
             - TokenRelay=
             - RewritePath=/identity/(?<segment>.*),/$\{segment}
+
+        - id: security-route-auth
+          uri: lb://security-service
+          predicates:
+            - Path=/auths/**,/css/**,/images/**,/js/**,/api/v1/users/**,/login,/api/v1/auths/**
+          filters:
+            - TokenRelay=
 
         - id: content-discovery-route
           uri: lb://content-discovery-service
@@ -78,7 +86,7 @@ spring:
             - RewritePath=/order/(?<segment>.*),/$\{segment}
 
         - id: event-ticket-route
-          uri: lb://event-and-ticket-booking-service
+          uri: lb://event-and-ticket-service
           predicates:
             - Path=/event-ticket/**
           filters:
@@ -94,6 +102,7 @@ spring:
             - RewritePath=/payment/(?<segment>.*),/$\{segment}
 
         - id: user-profile-route
+          #          uri: http://34.69.50.191:8086
           uri: lb://user-profile-service
           predicates:
             - Path=/user-profile/**
@@ -102,13 +111,14 @@ spring:
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
 
         - id: nextjs
-          uri: http://localhost:3000
+          uri: http://khotixs-admin-webplatform:7400
           predicates:
             - Path=/**
 
 
 client-security-matchers: >
   /login/**,
+  /logout/**,
   /oauth2/**,
   /en/**,
   /auth/**,
@@ -140,4 +150,5 @@ client-permit-matchers: >
   /event-ticket/**,
   /payment/**,
   /user-profile/**,
-  /content/**
+  /content/**,
+  /identity/**
