@@ -7,8 +7,8 @@ EUREKA-SERVER: eureka-server
 #database
 DB_USERNAME: services
 DB_PASSWORD: services
-db-host: 35.225.212.218
-db-port: 5433
+db-host: services-postgres-container
+db-port: 5432
 db-name: asset_db
 
 #minio
@@ -18,6 +18,6 @@ MINIO_SECRETE_KEY: q4JZ3VXI8BBBhIUeaBkmWBzHZ0uxxD3Wm4XHakBb
 MINIO_ACCESS_KEY: a3HN6WYKOnGsVtWouQaw
 
 #media
-base-uri: http://khotixs.devkh.asia/asset
+base-uri: http://khotixs.istad.co/asset
 image-endpoint: /api/v1/files
 video-endpoint: /api/v1/files
