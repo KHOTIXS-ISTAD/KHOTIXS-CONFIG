@@ -39,7 +39,7 @@ spring:
       routes:
         - id: security-route
           uri: http://35.225.212.218:9090
-#          uri: lb://security-service
+          #          uri: lb://security-service
           predicates:
             - Path=/identity/**
           filters:
@@ -101,11 +101,11 @@ spring:
           filters:
             - TokenRelay=
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
-#
-#        - id: nextjs-organizer
-#          uri: http://localhost:3000
-#          predicates:
-#            - Path=/organizer/**
+        #
+        #        - id: nextjs-organizer
+        #          uri: http://localhost:3000
+        #          predicates:
+        #            - Path=/organizer/**
 
         - id: nextjs
           uri: http://localhost:3000
@@ -128,7 +128,8 @@ client-security-matchers: >
   /payment/**,
   /user-profile/**,
   /content/**,
-  /identity/**
+  /identity/**,
+  /user-profile/**,
 
 client-permit-matchers: >
   /login/**,
@@ -149,4 +150,5 @@ client-permit-matchers: >
   /event-ticket/**,
   /payment/**,
   /content/**,
-  /identity/**
+  /identity/**,
+  /user-profile/**
