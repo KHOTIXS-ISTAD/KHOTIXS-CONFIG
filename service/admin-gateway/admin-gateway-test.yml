@@ -114,7 +114,7 @@ spring:
 
 
 client-security-matchers: >
-  /logout,
+  /logout/**,
   /login/**,
   /organizer/**
   /oauth2/**,
@@ -132,7 +132,7 @@ client-security-matchers: >
   /user-profile/**,
 
 client-permit-matchers: >
-  /logout,
+  /logout/**,
   /login/**,
   /oauth2/**,
   /en/**,
