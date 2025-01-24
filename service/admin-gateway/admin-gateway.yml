@@ -24,6 +24,7 @@ spring:
               - profile
               - email
             redirect-uri: ${REDIRECT_URI}
+            authentication-method:
               - client_secret_post
               - client_secret_basic
   cloud:
