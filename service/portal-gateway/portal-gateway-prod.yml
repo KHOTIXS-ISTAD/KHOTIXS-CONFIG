@@ -1,0 +1,17 @@
+PORT: 8000
+ISSUER_URI: https://oauth.khotixs.istad.co
+AUTHORIZATION_URI: https://oauth.khotixs.istad.co/oauth2/authorize
+TOKEN_URI: https://oauth.khotixs.istad.co/oauth2/token
+USER_INFO_URI: http://localhost:9090/oauth2/userinfo
+REDIRECT_URI: https://khotixs.istad.co/login/oauth2/code/nextjs
+
+SECURITY_URI: lb://security-service
+CONTENT_DISCOVERY_URI: lb://content-discovery-service
+ASSET_URI: lb://asset-service
+COMMUNICATION_URI: lb://communication-service
+ORDER_URI: lb://order-management-service
+EVENT_TICKET_URI: lb://event-and-ticket-service
+PAYMENT_URI: lb://payment-service
+USER_PROFILE_URI: lb://user-profile-service
+NEXTJS_URI: http://khotixs-webplatform-ui:3001
+DEFAULT_ZONE: http://eureka-server:8761/eureka

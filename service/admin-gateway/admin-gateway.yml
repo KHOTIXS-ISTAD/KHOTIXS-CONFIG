@@ -6,17 +6,17 @@ spring:
     oauth2:
       client:
         provider:
-          nextjs:
+          admin:
             issuer-uri: ${ISSUER_URI}
             authorization-uri: ${AUTHORIZATION_URI}
             token-uri: ${TOKEN_URI}
 #            user-info-uri: ${USER_INFO_URI}
 
         registration:
-          nextjs:
-            provider: nextjs
-            client-id: nextjs
-            client-secret: nextjs123
+          admin:
+            provider: admin
+            client-id: admin
+            client-secret: admin123
             authorization-grant-type:
               - authorization_code
             scope:

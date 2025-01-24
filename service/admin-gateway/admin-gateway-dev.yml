@@ -3,7 +3,7 @@ ISSUER_URI: https://khotixs-auth.devkh.asia
 AUTHORIZATION_URI: https://khotixs-auth.devkh.asia/oauth2/authorize
 TOKEN_URI: https://khotixs-auth.devkh.asia/oauth2/token
 USER_INFO_URI: http://localhost:9090/oauth2/userinfo
-REDIRECT_URI: https://khotixs-admin.devkh.asia/login/oauth2/code/nextjs
+REDIRECT_URI: https://khotixs-admin.devkh.asia/login/oauth2/code/admin
 
 SECURITY_URI: lb://security-service
 CONTENT_DISCOVERY_URI: lb://content-discovery-service
