@@ -1,4 +1,4 @@
-PORT: 8001
+PORT: 8890
 ISSUER_URI: https://oauth.khotixs.istad.co
 AUTHORIZATION_URI: https://oauth.khotixs.istad.co/oauth2/authorize
 TOKEN_URI: https://oauth.khotixs.istad.co/oauth2/token
