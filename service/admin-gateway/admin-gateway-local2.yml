@@ -1,5 +1,5 @@
 server:
-  port: ${PORT}
+  port: 8000
 
 spring:
   security:
@@ -7,10 +7,13 @@ spring:
       client:
         provider:
           nextjs:
-            issuer-uri: ${ISSUER_URI}
-            authorization-uri: ${AUTHORIZATION_URI}
-            token-uri: ${TOKEN_URI}
-#            user-info-uri: ${USER_INFO_URI}
+#            issuer-uri: https://khotixs-auth.devkh.asia
+#            authorization-uri: https://khotixs-auth.devkh.asia/oauth2/authorize
+#            token-uri: https://khotixs-auth.devkh.asia/oauth2/token
+            issuer-uri: http://localhost:9090
+            authorization-uri: http://localhost:9090/oauth2/authorize
+            token-uri: http://localhost:9090/oauth2/token
+        #            user-info-uri: http://localhost:9090/oauth2/userinfo
 
         registration:
           nextjs:
@@ -23,9 +26,11 @@ spring:
               - openid
               - profile
               - email
-            redirect-uri: ${REDIRECT_URI}
+            redirect-uri: http://localhost:8000/login/oauth2/code/nextjs
+            client-authentication-method:
               - client_secret_post
               - client_secret_basic
+            post-logout-redirect-uri: http://localhost:8000
   cloud:
     gateway:
       discovery:
@@ -37,15 +42,23 @@ spring:
         - SaveSession
       routes:
         - id: security-route
-          uri: ${SECURITY_URI}
+#          uri: https://khotixs-auth.devkh.asia
+          uri: lb://security-service
           predicates:
             - Path=/identity/**
           filters:
             - TokenRelay=
             - RewritePath=/identity/(?<segment>.*),/$\{segment}
 
+        - id: security-route-auth
+          uri: lb://security-service
+          predicates:
+            - Path=/auths/**,/css/**,/images/**,/js/**,/api/v1/users/**,/login,/api/v1/auths/**
+          filters:
+            - TokenRelay=
+
         - id: content-discovery-route
-          uri: ${CONTENT_DISCOVERY_URI}
+          uri: lb://content-discovery-service
           predicates:
             - Path=/content/**
           filters:
@@ -53,7 +66,7 @@ spring:
             - RewritePath=/content/(?<segment>.*),/$\{segment}
 
         - id: asset-route
-          uri: ${ASSET_URI}
+          uri: lb://asset-service
           predicates:
             - Path=/asset/**
           filters:
@@ -61,7 +74,7 @@ spring:
             - RewritePath=/asset/(?<segment>.*),/$\{segment}
 
         - id: communication-route
-          uri: ${COMMUNICATION_URI}
+          uri: lb://communication-service
           predicates:
             - Path=/communication/**
           filters:
@@ -69,7 +82,7 @@ spring:
             - RewritePath=/communication/(?<segment>.*),/$\{segment}
 
         - id: order-route
-          uri: ${ORDER_URI}
+          uri: lb://order-management-service
           predicates:
             - Path=/order/**
           filters:
@@ -77,7 +90,7 @@ spring:
             - RewritePath=/order/(?<segment>.*),/$\{segment}
 
         - id: event-ticket-route
-          uri: ${EVENT_TICKET_URI}
+          uri: lb://event-and-ticket-booking-service
           predicates:
             - Path=/event-ticket/**
           filters:
@@ -85,7 +98,7 @@ spring:
             - RewritePath=/event-ticket/(?<segment>.*),/$\{segment}
 
         - id: payment-route
-          uri: ${PAYMENT_URI}
+          uri: lb://payment-service
           predicates:
             - Path=/payment/**
           filters:
@@ -93,7 +106,7 @@ spring:
             - RewritePath=/payment/(?<segment>.*),/$\{segment}
 
         - id: user-profile-route
-          uri: ${USER_PROFILE_URI}
+          uri: lb://user-profile-service
           predicates:
             - Path=/user-profile/**
           filters:
@@ -101,7 +114,7 @@ spring:
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
 
         - id: nextjs
-          uri: ${NEXTJS_URI}
+          uri: http://localhost:3000
           predicates:
             - Path=/**
 
@@ -109,10 +122,9 @@ spring:
 client-security-matchers: >
   /login/**,
   /logout/**,
-  /organizer/**,
   /oauth2/**,
   /en/**,
-  /auth/**,
+  /auths/**,
   /profile/**,
   /asset/**,
   /communication/**,
@@ -121,15 +133,14 @@ client-security-matchers: >
   /payment/**,
   /user-profile/**,
   /content/**,
-  /identity/**,
-  /user-profile/**,
+  /identity/**
 
 client-permit-matchers: >
   /login/**,
-  /logout/**,
   /oauth2/**,
+  /logout/**,
   /en/**,
-  /auth/**,
+  /auths/**,
   /contactSupport/**,
   /error/**,
   /actuator/**,
@@ -142,11 +153,6 @@ client-permit-matchers: >
   /order/**,
   /event-ticket/**,
   /payment/**,
+  /user-profile/**,
   /content/**,
-  /identity/**,
-  /user-profile/**
-
-eureka:
-  client:
-    service-url:
-      defaultZone: ${DEFAULT_ZONE}
+  /identity/**
