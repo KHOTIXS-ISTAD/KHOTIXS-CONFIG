@@ -15,3 +15,4 @@ PAYMENT_URI: lb://payment-service
 USER_PROFILE_URI: lb://user-profile-service
 NEXTJS_URI: http://khotixs-admin-webplatform:3000
 DEFAULT_ZONE: http://eureka-server:8761/eureka
+SERVER_LOGOUT_URL: https://oauth.khotixs.istad.co/logout

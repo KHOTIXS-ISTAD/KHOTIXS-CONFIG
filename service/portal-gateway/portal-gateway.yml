@@ -150,3 +150,4 @@ eureka:
   client:
     service-url:
       defaultZone: ${DEFAULT_ZONE}
+server-logout-url: ${SERVER_LOGOUT_URL}

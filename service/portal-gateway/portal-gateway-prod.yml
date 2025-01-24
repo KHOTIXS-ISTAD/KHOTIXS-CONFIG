@@ -14,4 +14,4 @@ EVENT_TICKET_URI: lb://event-and-ticket-service
 PAYMENT_URI: lb://payment-service
 USER_PROFILE_URI: lb://user-profile-service
 NEXTJS_URI: http://khotixs-webplatform-ui:3001
-DEFAULT_ZONE: http://eureka-server:8761/eureka
+SERVER_LOGOUT_URL: https://oauth.khotixs.istad.co/logout
