@@ -1,4 +1,4 @@
-PORT: 8000
+PORT: 8001
 ISSUER_URI: https://khotixs-auth.devkh.asia
 AUTHORIZATION_URI: https://khotixs-auth.devkh.asia/oauth2/authorize
 TOKEN_URI: https://khotixs-auth.devkh.asia/oauth2/token

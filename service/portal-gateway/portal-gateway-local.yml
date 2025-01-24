@@ -1,4 +1,4 @@
-PORT: 8000
+PORT: 8001
 ISSUER_URI: http://localhost:9090
 AUTHORIZATION_URI: http://localhost:9090/oauth2/authorize
 TOKEN_URI: http://localhost:9090/oauth2/token
