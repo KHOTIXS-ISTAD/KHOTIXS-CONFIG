@@ -1,0 +1,6 @@
+AUTHENTICATION-DATABASE: admin
+DB_HOST: services-mongo-container
+DB_NAME: communication_db
+DB_PASSWORD: services
+DB_PORT: 27017
+DB_USERNAME: services
