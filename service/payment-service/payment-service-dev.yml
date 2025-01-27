@@ -1,7 +1,7 @@
 
 #database
-DB_USERNAME: soknem
-DB_PASSWORD: soknem123
-db-host: 143.198.83.9
-db-port: 5431
-db-name: payment-db
+DB_USERNAME: services
+DB_PASSWORD: services
+db-host: 35.225.212.218
+db-port: 5433
+db-name: payment_db
