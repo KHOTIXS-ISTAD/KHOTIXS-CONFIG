@@ -107,23 +107,25 @@ spring:
             - Path=/**
 
 
+#client-security-matchers: >
+#  /login/**,
+#  /logout/**,
+#  /organizer/**,
+#  /oauth2/**,
+#  /en/**,
+#  /auth/**,
+#  /profile/**,
+#  /asset/**,
+#  /communication/**,
+#  /order/**,
+#  /event-ticket/**,
+#  /payment/**,
+#  /user-profile/**,
+#  /content/**,
+#  /identity/**,
+#  /user-profile/**,
 client-security-matchers: >
-  /login/**,
-  /logout/**,
-  /organizer/**,
-  /oauth2/**,
-  /en/**,
-  /auth/**,
-  /profile/**,
-  /asset/**,
-  /communication/**,
-  /order/**,
-  /event-ticket/**,
-  /payment/**,
-  /user-profile/**,
-  /content/**,
-  /identity/**,
-  /user-profile/**,
+  /**
 
 client-permit-matchers: >
   /login/**,
