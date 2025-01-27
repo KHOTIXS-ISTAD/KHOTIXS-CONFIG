@@ -10,7 +10,7 @@ spring:
             issuer-uri: ${ISSUER_URI}
             authorization-uri: ${AUTHORIZATION_URI}
             token-uri: ${TOKEN_URI}
-#            user-info-uri: ${USER_INFO_URI}
+            user-info-uri: ${USER_INFO_URI}
 
         registration:
           admin:
