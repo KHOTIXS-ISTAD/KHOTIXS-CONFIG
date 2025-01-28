@@ -1,11 +1,29 @@
+#server:
+#  port: 7505
+#spring:
+#  datasource:
+#    username: ${DB_USERNAME}
+#    password: ${DB_PASSWORD}
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://${DB-HOST}:${DB-PORT}/${DB-NAME}
+#
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: ${DDL_AUTO}
+#    generate-ddl: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
   port: 7505
 spring:
   datasource:
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    username: services
+    password: services
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${DB-HOST}:${DB-PORT}/${DB-NAME}
+    url: jdbc:postgresql://services-postgres-container:5432/payment_db
 
   jpa:
     show-sql: true
