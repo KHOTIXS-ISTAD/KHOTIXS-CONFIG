@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: 7504
 spring:
   datasource:
     username: ${DB_USERNAME}
