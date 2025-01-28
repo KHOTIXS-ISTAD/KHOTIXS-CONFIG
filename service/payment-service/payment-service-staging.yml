@@ -1,8 +1,8 @@
 
 #database
-#DB_USERNAME: soknem
-#DB_PASSWORD: soknem123
-#DB-HOST: 143.198.83.9
-#DB-PORT: 5432
-#DB-NAME: payment-db
+DB_USERNAME: services
+DB_PASSWORD: services
+DB-HOST: services-postgres-container
+DB-PORT: 5432
+DB-NAME: payment-db
 DDL_AUTO: update
