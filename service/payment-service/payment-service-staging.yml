@@ -3,5 +3,5 @@
 DB_USERNAME: soknem
 DB_PASSWORD: soknem123
 db-host: 143.198.83.9
-db-port: 5431
+db-port: 5432
 db-name: payment-db
