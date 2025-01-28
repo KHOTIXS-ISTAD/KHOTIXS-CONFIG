@@ -19,7 +19,6 @@ spring:
             client-secret: nextjs123
             authorization-grant-type:
               - authorization_code
-              - refresh_token
             scope:
               - openid
               - profile
