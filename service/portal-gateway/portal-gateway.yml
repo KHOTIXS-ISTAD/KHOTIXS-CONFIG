@@ -106,6 +106,7 @@ spring:
           predicates:
             - Path=/organizer/**
           filters:
+            - TokenRelay=
             - RoleAuth=ORGANIZER
 
         - id: nextjs
