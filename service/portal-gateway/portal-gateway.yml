@@ -100,7 +100,6 @@ spring:
           filters:
             - TokenRelay=
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
-
         - id: organizer
           uri: ${NEXTJS_URI}
           predicates:
