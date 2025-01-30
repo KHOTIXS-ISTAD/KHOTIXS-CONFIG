@@ -106,7 +106,7 @@ spring:
           predicates:
             - Path=/**
           filters:
-#            - RoleAuth=USER
+            - RoleAuth=USER
 
 
 client-security-matchers: >
