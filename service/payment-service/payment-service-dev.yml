@@ -2,6 +2,7 @@
 #database
 DB_USERNAME: services
 DB_PASSWORD: services
-db-host: 35.225.212.218
-db-port: 5433
-db-name: payment_db
+DB_HOST: 35.225.212.218
+DB_PORT: 5433
+DB_NAME: payment_db
+DDL_AUTO: create-drop
