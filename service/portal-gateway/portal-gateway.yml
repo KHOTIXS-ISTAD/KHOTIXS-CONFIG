@@ -105,6 +105,8 @@ spring:
           uri: ${NEXTJS_URI}
           predicates:
             - Path=/**
+          filters:
+            - RoleAuthGatewayFilterFactory=USER
 
 
 client-security-matchers: >
