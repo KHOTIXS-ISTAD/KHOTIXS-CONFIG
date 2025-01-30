@@ -20,6 +20,42 @@
 server:
   port: 7505
 spring:
+  thymeleaf:
+    cache: false
+  kafka:
+    properties:
+      specific.avro.reader: true
+    bootstrap-servers:
+      - 202.178.125.77:29093
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        schema.registry.url: http://202.178.125.77:8081
+
+    consumer:
+      group-id: event-and-ticket-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        schema.registry.url: http://202.178.125.77:8081
+        schema.registry.request.timeout.ms: 10000
+        schema.registry.connection.timeout.ms: 10000
+    security:
+      protocol: SSL
+    ssl:
+      trust-store-location: classpath:kafka.server.truststore.jks
+      trust-store-password: password123
+      key-store-location: classpath:kafka.server.keystore.jks
+      key-store-password: password123
+      key-password: password123
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://oauth.khotixs.istad.co
+
   datasource:
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
@@ -34,3 +70,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+bakong:
+  token: ${BAKONG_TOKEN}
+
+bot:
+  name: ${BOT_NAME}
+  token: ${BOT_TOKEN}
