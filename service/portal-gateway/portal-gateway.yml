@@ -106,9 +106,9 @@ spring:
             - Path=/organizer/**
           filters:
             - TokenRelay=
-#            - Name: RoleAuth
-#              Args:
-#                roles: ORGANIZER,ADMIN
+            - Name: RoleAuth
+              Args:
+                roles: ORGANIZER,ADMIN
 
 
         - id: nextjs
