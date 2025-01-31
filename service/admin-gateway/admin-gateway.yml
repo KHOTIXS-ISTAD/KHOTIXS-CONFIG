@@ -105,8 +105,8 @@ spring:
           uri: ${NEXTJS_URI}
           predicates:
             - Path=/**
-          filters:
-            - RoleAuth=ADMIN
+#          filters:
+#            - RoleAuth=ADMIN
 
 
 #client-security-matchers: >
