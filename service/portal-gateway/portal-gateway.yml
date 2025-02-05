@@ -100,11 +100,23 @@ spring:
           filters:
             - TokenRelay=
             - RewritePath=/user-profile/(?<segment>.*),/$\{segment}
+#        - id: organizer
+#          uri: ${NEXTJS_URI}
+#          predicates:
+#            - Path=/organizer/**
+#          filters:
+#            - TokenRelay=
+#            - Name: RoleAuth
+#              Args:
+#                roles: ORGANIZER,ADMIN
+
 
         - id: nextjs
           uri: ${NEXTJS_URI}
           predicates:
             - Path=/**
+          filters:
+#            - RoleAuth=USER
 
 
 client-security-matchers: >
