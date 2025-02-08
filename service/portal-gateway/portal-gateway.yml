@@ -110,6 +110,12 @@ spring:
 #              Args:
 #                roles: ORGANIZER,ADMIN
 
+        - id: elastic
+          uri: http://es01:9200
+          predicates:
+            - Path=/els/**
+          filters:
+            - RewritePath=/els/(?<segment>.*),/$\{segment}
 
         - id: nextjs
           uri: ${NEXTJS_URI}
@@ -117,6 +123,7 @@ spring:
             - Path=/**
           filters:
 #            - RoleAuth=USER
+
 
 
 client-security-matchers: >
