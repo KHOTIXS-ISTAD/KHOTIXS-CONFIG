@@ -7,8 +7,8 @@ EUREKA-SERVER: eureka-server
 #database
 DB_USERNAME: services
 DB_PASSWORD: services
-db-host: services-postgres-container
-db-port: 5432
+db-host: 202.178.125.77
+db-port: 7200
 db-name: asset_db
 
 #minio
