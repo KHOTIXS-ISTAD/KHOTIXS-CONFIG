@@ -12,10 +12,10 @@ db-port: 5432
 db-name: asset_db
 
 #minio
-minio-url: http://35.225.212.218:9000
-minio-bucket: media
-MINIO_SECRETE_KEY: q4JZ3VXI8BBBhIUeaBkmWBzHZ0uxxD3Wm4XHakBb
-MINIO_ACCESS_KEY: a3HN6WYKOnGsVtWouQaw
+minio-url: http://188.166.229.56:9000
+minio-bucket: khotixs-bucket1
+MINIO_SECRETE_KEY: ppC19833d7DzBDmY7Bskn1yZ45DkVSq463K43Ld6
+MINIO_ACCESS_KEY: V3NEe5sYUvUDYDsVQsmJ
 
 #media
 base-uri: https://khotixs.istad.co/asset
