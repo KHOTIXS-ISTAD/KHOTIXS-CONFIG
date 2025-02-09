@@ -2,7 +2,14 @@
 #database
 DB_USERNAME: services
 DB_PASSWORD: services
-DB-HOST: services-postgres-container
-DB-PORT: 5432
-DB-NAME: payment-db
+DB_HOST: 202.178.125.77
+DB_PORT: 7200
+DB_NAME: payment_db
 DDL_AUTO: update
+
+#bakong
+BAKONG_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNDkzYTU5ZWM3Y2IwNDJjMyJ9LCJpYXQiOjE3MzUyNzU1ODIsImV4cCI6MTc0MzA1MTU4Mn0.lA3_LlWocp0cxLsZ-ecDvzKA9UujFiZKr2DkSSrlEEk
+
+#bot
+BOT_NAME: khotixs_bot
+BOT_TOKEN: 8147894586:AAGnQPk-G_-UQOg3a6Z1NAPdkEibSH0yGmQ
