@@ -1,18 +1,18 @@
 PORT: 8001
-ISSUER_URI: https://khotixs-auth.devkh.asia
-AUTHORIZATION_URI: https://khotixs-auth.devkh.asia/oauth2/authorize
-TOKEN_URI: https://khotixs-auth.devkh.asia/oauth2/token
+ISSUER_URI: https://oauth.khotixs.istad.co
+AUTHORIZATION_URI: https://oauth.khotixs.istad.co/oauth2/authorize
+TOKEN_URI: https://oauth.khotixs.istad.co/oauth2/token
 USER_INFO_URI: http://localhost:9090/oauth2/userinfo
 REDIRECT_URI: http://localhost:8001/login/oauth2/code/nextjs
 
-SECURITY_URI: http://35.225.212.218:9090
+SECURITY_URI: http://202.178.125.77:9090
 CONTENT_DISCOVERY_URI: lb://content-discovery-service
-ASSET_URI: http://35.225.212.218:8889
-COMMUNICATION_URI: http://35.225.212.218:8891
+ASSET_URI: http://202.178.125.77:8889
+COMMUNICATION_URI: http://202.178.125.77:8891
 ORDER_URI: lb://order-management-service
-EVENT_TICKET_URI: http://35.225.212.218:8892
+EVENT_TICKET_URI: http://202.178.125.77:8892
 PAYMENT_URI: lb://payment-service
-USER_PROFILE_URI: http://35.225.212.218:8086
+USER_PROFILE_URI: http://202.178.125.77:8086
 NEXTJS_URI: http://localhost:3000
 DEFAULT_ZONE: http://localhost:8761/eureka
-SERVER_LOGOUT_URL: https://khotixs-auth.devkh.asia/logout
+SERVER_LOGOUT_URL: https://oauth.khotixs.istad.co/logout
