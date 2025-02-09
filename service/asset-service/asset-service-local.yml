@@ -12,10 +12,10 @@ db-port: 7200
 db-name: asset_db
 
 #minio
-minio-url: http://188.166.229.56:9000
+minio-url: http://202.178.125.77:7506
 minio-bucket: khotixs-bucket1
-MINIO_SECRETE_KEY: ppC19833d7DzBDmY7Bskn1yZ45DkVSq463K43Ld6
-MINIO_ACCESS_KEY: V3NEe5sYUvUDYDsVQsmJ
+MINIO_SECRETE_KEY: gkpnWmavb8DVQQjAs9vbCCBuFptIuoUM3MEQFnJM
+MINIO_ACCESS_KEY: buMiAb82BUG3WOUH8Lig
 
 #media
 base-uri: https://khotixs.istad.co/asset
