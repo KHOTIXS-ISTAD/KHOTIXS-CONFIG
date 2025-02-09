@@ -7,7 +7,7 @@ REDIRECT_URI: http://localhost:8001/login/oauth2/code/nextjs
 
 SECURITY_URI: http://202.178.125.77:7100
 CONTENT_DISCOVERY_URI: lb://content-discovery-service
-ASSET_URI: https://khotixs.istad.co
+ASSET_URI: http://202.178.125.77:7500
 COMMUNICATION_URI: http://202.178.125.77:7502
 ORDER_URI: http://202.178.125.77:7504
 EVENT_TICKET_URI: http://202.178.125.77:7503
